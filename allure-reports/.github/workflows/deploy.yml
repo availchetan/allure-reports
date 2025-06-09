@@ -11,12 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate Allure Report
-        run: |
-          # Make sure allure command is available; if not, install allure CLI
-          # Generate report assuming test results in ./allure-results
-          allure generate ./allure-results --clean -o ./docs
-
       - name: Fix Base URL for GitHub Pages
         run: |
           sed -i 's|<head>|<head><base href="/allure-reports/" />|' ./docs/index.html
