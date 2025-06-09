@@ -1,22 +1,24 @@
-name: Deploy Allure Report
+name: Patch Allure Base Path for GitHub Pages
 
 on:
   push:
     branches: [ main ]
 
 jobs:
-  deploy:
+  patch:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fix Base URL for GitHub Pages
+      - name: Inject base href for GitHub Pages subpath
         run: |
           sed -i 's|<head>|<head><base href="/allure-reports/" />|' ./docs/index.html
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+      - name: Commit patched index.html
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add ./docs/index.html
+          git commit -m "Patch base href for GitHub Pages" || echo "No changes to commit"
+          git push
