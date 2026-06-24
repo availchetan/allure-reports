@@ -1,0 +1,12 @@
+{
+    "content-type": "application/json",
+    "vary": "Accept-Encoding",
+    "x-process-time": "0.0372",
+    "x-request-id": "f320d219-de13-4253-96a2-9028503939e2",
+    "content-encoding": "gzip",
+    "x-cloud-trace-context": "a0defe7487af0bcd5dd92e76d613a71e",
+    "date": "Sat, 20 Jun 2026 18:03:12 GMT",
+    "server": "Google Frontend",
+    "Alt-Svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "Transfer-Encoding": "chunked"
+}
