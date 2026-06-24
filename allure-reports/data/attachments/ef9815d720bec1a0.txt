@@ -1,0 +1,1 @@
+{"user_id":"user_06855c7543b0","phone":"+919999999988","name":"Test User","email":"test@example.com","addresses":[],"wallet_balance":0.0,"user_type":"public","created_at":"2026-06-20T18:03:26.574821Z"}
